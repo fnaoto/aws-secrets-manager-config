@@ -6,6 +6,7 @@ require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 require 'yard'
+require 'rake/testtask'
 
 Bundler::GemHelper.install_tasks
 
@@ -15,6 +16,13 @@ task default: :test
 desc 'Rubocop'
 task :rubocop do
   RuboCop::RakeTask.new
+end
+
+desc 'Test'
+Rake::TestTask.new do |task|
+  task.libs << 'lib'
+  task.libs << 'test'
+  task.test_files = FileList['test/*_test.rb']
 end
 
 desc 'Spec'
