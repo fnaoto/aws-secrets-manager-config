@@ -13,9 +13,10 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '~> 2.4'
 
   s.add_dependency 'aws-sdk-secretsmanager'
-  s.add_dependency 'multi_json'
+  s.add_dependency 'json'
 
   s.add_development_dependency 'bundler'
+  s.add_development_dependency 'minitest'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop'
